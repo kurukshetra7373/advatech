@@ -1,0 +1,204 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── BASE ──────────────────────────────────────────── */
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: 16px;
+    color: #1e293b;
+    background: #ffffff;
+    line-height: 1.7;
+    letter-spacing: -0.005em;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Syne', system-ui, sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    line-height: 1.25;
+    color: #112244;
+    overflow: visible;
+  }
+
+  /* Remove justify — it causes uneven word spacing (rivers of whitespace) */
+  p { line-height: 1.75; }
+
+  ::selection { background: rgba(32,190,190,0.18); color: inherit; }
+
+  img, svg { display: block; }
+  input, textarea, select, button { font-family: inherit; }
+}
+
+/* ── KEYFRAMES ─────────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position:  200% 0; }
+}
+@keyframes pulse-ring {
+  0%   { transform: scale(0.9); opacity: 0.8; }
+  70%  { transform: scale(1.3); opacity: 0; }
+  100% { transform: scale(1.3); opacity: 0; }
+}
+
+/* ── COMPONENTS ────────────────────────────────────── */
+@layer components {
+
+  /* CHIPS ─────────────────────────────────── */
+  .chip {
+    @apply inline-flex items-center gap-2 px-4 py-1.5 rounded-full
+           text-[0.68rem] font-semibold tracking-[0.14em] uppercase
+           bg-teal-50 border border-teal-200/80 text-teal-700;
+  }
+  .chip-dark {
+    @apply inline-flex items-center gap-2 px-4 py-1.5 rounded-full
+           text-[0.68rem] font-semibold tracking-[0.14em] uppercase
+           bg-white/[0.08] border border-white/[0.15] text-teal-300;
+  }
+
+  /* BUTTONS ───────────────────────────────── */
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-6 py-3 rounded-xl
+           font-semibold text-sm bg-navy text-white
+           transition-all duration-200
+           hover:bg-navy-700 hover:-translate-y-0.5 hover:shadow-btn-navy
+           active:scale-[0.98] active:translate-y-0;
+  }
+  .btn-teal {
+    @apply inline-flex items-center gap-2 px-6 py-3 rounded-xl
+           font-semibold text-sm bg-teal-400 text-navy
+           transition-all duration-200
+           hover:bg-teal-300 hover:-translate-y-0.5 hover:shadow-btn-teal
+           active:scale-[0.98] active:translate-y-0;
+  }
+  .btn-outline {
+    @apply inline-flex items-center gap-2 px-6 py-3 rounded-xl
+           font-semibold text-sm border border-slate-200 text-slate-700 bg-white
+           transition-all duration-200
+           hover:border-navy/30 hover:text-navy hover:bg-slate-50 hover:-translate-y-0.5;
+  }
+  .btn-outline-white {
+    @apply inline-flex items-center gap-2 px-6 py-3 rounded-xl
+           font-semibold text-sm border border-white/25 text-white/90
+           transition-all duration-200
+           hover:bg-white/10 hover:border-white/40 hover:-translate-y-0.5;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 px-4 py-2 rounded-lg
+           text-sm font-medium text-slate-500
+           transition-all duration-200 hover:text-navy hover:bg-slate-100;
+  }
+
+  /* CARDS ─────────────────────────────────── */
+  .card {
+    @apply bg-white rounded-2xl
+           border border-slate-100
+           shadow-card;
+  }
+  .card-hover {
+    @apply bg-white rounded-2xl
+           border border-slate-200
+           shadow-[0_2px_8px_rgba(0,0,0,0.05),0_0_0_1px_rgba(0,0,0,0.04)]
+           transition-all duration-300
+           hover:border-teal-300/60
+           hover:shadow-[0_20px_60px_rgba(32,190,190,0.13),0_4px_16px_rgba(0,0,0,0.07),0_0_0_1px_rgba(32,190,190,0.25)]
+           hover:-translate-y-1.5;
+  }
+  .card-flat {
+    @apply bg-white rounded-2xl border border-slate-100;
+  }
+
+  /* TYPOGRAPHY ────────────────────────────── */
+  .section-label {
+    @apply inline-flex items-center gap-2.5
+           text-[0.68rem] font-bold tracking-[0.2em] uppercase text-teal-600;
+  }
+  .section-label::before {
+    content: '';
+    display: inline-block;
+    width: 18px;
+    height: 2px;
+    background: currentColor;
+    border-radius: 2px;
+    flex-shrink: 0;
+  }
+  .section-title {
+    @apply text-[2rem] md:text-[2.65rem] font-bold text-navy
+           leading-[1.3] tracking-[-0.025em] overflow-visible;
+  }
+  .section-sub {
+    @apply text-slate-500 text-[1.05rem] leading-[1.8];
+  }
+  .text-gradient {
+    @apply bg-gradient-to-r from-teal-500 to-teal-400 bg-clip-text text-transparent;
+  }
+
+  /* HERO GRADIENT ORBS ────────────────────── */
+  .hero-orb {
+    @apply absolute rounded-full blur-[120px] pointer-events-none;
+  }
+
+  /* ICON CONTAINER ────────────────────────── */
+  .icon-box {
+    @apply w-11 h-11 rounded-xl flex items-center justify-center
+           bg-gradient-to-br from-teal-50 to-teal-100/60
+           border border-teal-200/70 flex-shrink-0;
+  }
+  .icon-box-lg {
+    @apply w-14 h-14 rounded-2xl flex items-center justify-center
+           bg-gradient-to-br from-teal-50 to-teal-100/60
+           border border-teal-200/70 flex-shrink-0;
+  }
+  .icon-box-navy {
+    @apply w-11 h-11 rounded-xl flex items-center justify-center
+           bg-white/10 border border-white/15 flex-shrink-0;
+  }
+
+  /* FEATURE PILL (tag on dark bg) ─────────── */
+  .feature-pill {
+    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full
+           text-xs font-medium
+           bg-teal-400/10 border border-teal-400/20 text-teal-300;
+  }
+
+  /* DIVIDER ───────────────────────────────── */
+  .section-divider {
+    @apply border-t border-slate-100;
+  }
+}
+
+/* ── UTILITY OVERRIDES ─────────────────────────────── */
+@layer utilities {
+  .font-display { font-family: 'Syne', system-ui, sans-serif; }
+
+  /* Gradient text */
+  .text-gradient-teal {
+    background: linear-gradient(135deg, #5ED8D8 0%, #20BEBE 60%, #159898 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Noise texture for dark sections */
+  .bg-noise {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  }
+
+  /* Navy section dot grid */
+  .navy-grid {
+    background-image: radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px);
+    background-size: 36px 36px;
+  }
+}
