@@ -8,7 +8,7 @@
   html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 
   body {
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-family: 'Poppins', system-ui, -apple-system, sans-serif;
     font-size: 16px;
     color: #1e293b;
     background: #ffffff;
@@ -17,9 +17,9 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Syne', system-ui, sans-serif;
+    font-family: 'Poppins', system-ui, sans-serif;
     font-weight: 700;
-    letter-spacing: -0.025em;
+    letter-spacing: -0.02em;
     line-height: 1.25;
     color: #112244;
     overflow: visible;
@@ -181,7 +181,7 @@
 
 /* ── UTILITY OVERRIDES ─────────────────────────────── */
 @layer utilities {
-  .font-display { font-family: 'Syne', system-ui, sans-serif; }
+  .font-display { font-family: 'Poppins', system-ui, sans-serif; }
 
   /* Gradient text */
   .text-gradient-teal {

@@ -448,12 +448,30 @@ export default function Home() {
       {/* ── WHAT WE DO ────────────────────────────────── */}
       <section className="py-28 bg-white" style={{ borderTop: '3px solid #20BEBE' }}>
         <div className="container mx-auto px-6 max-w-6xl">
-          <AnimatedSection className="mb-16">
+          <AnimatedSection className="mb-10">
             <div className="section-label mb-4">What We Do</div>
             <h2 className="section-title mb-5 max-w-2xl">Intelligent Technology for Complex Operations</h2>
             <p className="text-slate-500 text-[1.05rem] leading-[1.8] max-w-3xl">
               AdvaTech helps organizations modernize document-heavy and data-intensive operations through intelligent technology — reducing manual effort, accelerating review cycles, and supporting compliance-conscious decision-making.
             </p>
+          </AnimatedSection>
+
+          {/* ── PRODUCT VIDEO ── */}
+          <AnimatedSection delay={80} className="mb-16">
+            <div className="relative rounded-2xl overflow-hidden
+                            border border-slate-200
+                            shadow-[0_8px_40px_rgba(0,0,0,0.1),0_2px_8px_rgba(0,0,0,0.06)]">
+              {/* Thin teal top accent */}
+              <div className="absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r from-teal-500 via-teal-400 to-teal-300 z-10" />
+              <video
+                src="/adva-final.mp4"
+                controls
+                playsInline
+                preload="metadata"
+                className="w-full block"
+                style={{ maxHeight: '520px', objectFit: 'cover', background: '#0a1628' }}
+              />
+            </div>
           </AnimatedSection>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">

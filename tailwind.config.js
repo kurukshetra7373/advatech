@@ -40,8 +40,8 @@ export default {
         },
       },
       fontFamily: {
-        sans:    ['"Inter"', 'system-ui', '-apple-system', 'sans-serif'],
-        display: ['"Syne"', '"Inter"', 'system-ui', 'sans-serif'],
+        sans:    ['"Poppins"', 'system-ui', '-apple-system', 'sans-serif'],
+        display: ['"Poppins"', 'system-ui', 'sans-serif'],
         mono:    ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
       },
       fontSize: {
