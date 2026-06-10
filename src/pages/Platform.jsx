@@ -169,6 +169,47 @@ export default function Platform() {
         </div>
       </section>
 
+      {/* AdvaIntel Chatbot Image */}
+      <section className="py-20 bg-white" style={{ borderTop: '3px solid #20BEBE' }}>
+        <div className="container mx-auto px-6 max-w-6xl">
+          <div className="grid lg:grid-cols-2 gap-14 items-center">
+
+            <AnimatedSection>
+              <div className="section-label mb-4">AdvaIntel Assistant</div>
+              <h2 className="section-title mb-5">Your AI-Powered Knowledge Assistant</h2>
+              <p className="text-slate-500 text-[1.05rem] leading-[1.8] mb-6">
+                AdvaIntel Assistant brings natural language search across your enterprise systems — ERP, LIMS, Veeva, and trusted public sources — delivering source-linked, decision-ready answers in seconds.
+              </p>
+              <ul className="space-y-3 mb-8">
+                {['Ask questions in plain language, get cited answers','Search across SAP, Oracle, Labware, Veeva and more','Access FDA guidance, patents, and scientific literature','Generate summaries, comparisons, and reports instantly'].map(f => (
+                  <li key={f} className="flex items-start gap-3 text-sm text-slate-600">
+                    <Check className="w-4 h-4 text-teal-500 flex-shrink-0 mt-0.5" />
+                    {f}
+                  </li>
+                ))}
+              </ul>
+              <Link to="/contact" className="btn-primary bg-navy inline-flex">
+                Request a Demo <ArrowRight className="w-4 h-4" />
+              </Link>
+            </AnimatedSection>
+
+            <AnimatedSection delay={150} direction="left">
+              <div className="relative rounded-2xl overflow-hidden
+                              border border-teal-200
+                              shadow-[0_8px_40px_rgba(32,190,190,0.12),0_2px_8px_rgba(0,0,0,0.06)]">
+                <div className="absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r from-teal-500 via-teal-400 to-teal-300" />
+                <img
+                  src="/chatbot.jpg"
+                  alt="AdvaIntel Assistant — AI chatbot interface"
+                  className="w-full block object-cover"
+                />
+              </div>
+            </AnimatedSection>
+
+          </div>
+        </div>
+      </section>
+
       {/* Human in the loop callout */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-6 max-w-6xl">
